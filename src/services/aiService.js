@@ -167,7 +167,10 @@ export const extractDataFromFile = async (file) => {
     - Ensure response is valid JSON
     - For Excel data, match column headers to fields
     - For images/PDFs, extract all visible text first
-    - Look for common invoice fields like "Invoice No", "Bill To", "Amount", etc.`;
+    - Look for common invoice fields like "Invoice No", "Bill To", "Amount", etc.
+    - Ensure all the products are included in the response.
+    - Ensure all the customers are included in the response.
+    - Ensure all the invoices are included in the response.`;
 
     console.log("Sending to Gemini...");
     const result = await model.generateContent([content, { text: prompt }]);
